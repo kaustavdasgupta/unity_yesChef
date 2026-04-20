@@ -268,7 +268,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 202.9153, y: -191.1143}
+  m_AnchoredPosition: {x: 169.22675, y: -191.1143}
   m_SizeDelta: {x: 306.9315, y: 94.0762}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &191319385
@@ -938,7 +938,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 202.9153, y: -72.0381}
+  m_AnchoredPosition: {x: 169.22675, y: -72.0381}
   m_SizeDelta: {x: 306.9315, y: 94.0762}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &878125013
@@ -1704,8 +1704,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 399, y: 0}
-  m_SizeDelta: {x: 405.8306, y: 382.2286}
+  m_AnchoredPosition: {x: 431, y: -5}
+  m_SizeDelta: {x: 338.4535, y: 382.2286}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1772923948
 MonoBehaviour:
@@ -1944,7 +1944,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 202.9153, y: -310.1905}
+  m_AnchoredPosition: {x: 169.22675, y: -310.1905}
   m_SizeDelta: {x: 306.9315, y: 94.0762}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1939191686
@@ -2159,6 +2159,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8869601555403952214, guid: 7a7df9e2d31b18d4fa12e4e725f3078e, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 330585545}
+    - target: {fileID: 8966501182874035404, guid: 7a7df9e2d31b18d4fa12e4e725f3078e, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 330585545}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2295,6 +2303,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1422760097}
     m_Modifications:
+    - target: {fileID: 1503209133266374063, guid: bbc0936c510ff1f489e144cf8ced9df8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 330585545}
     - target: {fileID: 2745791607778752914, guid: bbc0936c510ff1f489e144cf8ced9df8, type: 3}
       propertyPath: m_Camera
       value: 

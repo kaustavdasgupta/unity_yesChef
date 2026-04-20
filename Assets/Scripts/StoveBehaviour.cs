@@ -40,6 +40,9 @@ public class StoveBehaviour : MonoBehaviour, IInteractable
                     if (slot.meatOnSlot != null)
                         Destroy(slot.meatOnSlot);
 
+                    if (slot.progressBar != null)
+                        slot.progressBar.HideBar();
+
                     return true;
                 }
             }
@@ -51,7 +54,17 @@ public class StoveBehaviour : MonoBehaviour, IInteractable
     private IEnumerator CookRoutine(CookSlot slot)
     {
         slot.isCooking = true;
-        yield return new WaitForSeconds(cookTime);
+        float timer = 0f;
+
+        while (timer < cookTime)
+        {
+            timer += Time.deltaTime;
+            if (slot.progressBar != null)
+            {
+                slot.progressBar.UpdateProgress(timer, cookTime);
+            }
+            yield return null;
+        }
 
         if (slot.meatOnSlot != null) 
             Destroy(slot.meatOnSlot);
@@ -59,6 +72,9 @@ public class StoveBehaviour : MonoBehaviour, IInteractable
         slot.meatOnSlot = Instantiate(slot.itemOnSlot.GetModel(true), slot.placementSlot.transform.position, Quaternion.identity);
         slot.isCooking = false;
         Debug.Log("Cooking complete!");
+
+        if (slot.progressBar != null) 
+            slot.progressBar.HideBar();
     }
 }
 
@@ -68,6 +84,7 @@ public class CookSlot
     public Transform placementSlot;
     [HideInInspector] public IngredientSO itemOnSlot;
     [HideInInspector] public GameObject meatOnSlot;
+    public ProgressBar progressBar;
     public bool isCooking;
 }
 

@@ -13,6 +13,8 @@ public class TableBehaviour : MonoBehaviour, IInteractable
     bool isDoneChopping = false;
     PlayerCarry playerRef;
 
+    [SerializeField] ProgressBar progressBar;
+
     public bool Interact(PlayerCarry player)
     {
         playerRef = player;
@@ -42,7 +44,10 @@ public class TableBehaviour : MonoBehaviour, IInteractable
             
             if (vegetableOnTable != null) 
                 Destroy(vegetableOnTable);
-           
+
+            if (progressBar != null) 
+                progressBar.HideBar();
+
             return true;
         }
 
@@ -63,6 +68,9 @@ public class TableBehaviour : MonoBehaviour, IInteractable
         {
             currentProgress += Time.deltaTime;
 
+            if (progressBar != null) 
+                progressBar.UpdateProgress(currentProgress, chopTime);
+
             if (currentProgress >= chopTime)
             {
                 FinishChopping();
@@ -78,6 +86,9 @@ public class TableBehaviour : MonoBehaviour, IInteractable
             Destroy(vegetableOnTable);
 
         vegetableOnTable = Instantiate(itemOnTable.GetModel(true), itemPlacementSlot.transform.position, Quaternion.identity);
+
+        if (progressBar != null) 
+            progressBar.HideBar();
     }
 }
 
