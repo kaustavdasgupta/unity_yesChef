@@ -59,8 +59,6 @@ public class TableBehaviour : MonoBehaviour, IInteractable
 
     private void CheckProximityAndChop()
     {
-        Debug.Log(Vector3.Distance(transform.position, playerRef.transform.position));
-
         if (playerRef != null && Vector3.Distance(transform.position, playerRef.transform.position) <= interactionRange)
         {
             currentProgress += Time.deltaTime;
