@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour, IMovable
 {
-    [SerializeField] float moveSpeed = 7f;
+    [SerializeField] float moveSpeed = 10f;
     [SerializeField] float rotationSpeed = 10f;
 
     CharacterController controller;
