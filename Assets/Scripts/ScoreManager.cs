@@ -33,18 +33,25 @@ public class ScoreManager : MonoBehaviour
         highScoreText.text = storedHigh.ToString();
     }
 
-    public void RegisterFinalScore()
+    public bool RegisterFinalScore()
     {
         int savedHighScore = PlayerPrefs.GetInt("HighScore", 0);
+        bool isNewRecord = false;
 
         if (currentScore > savedHighScore)
         {
             PlayerPrefs.SetInt("HighScore", currentScore);
             PlayerPrefs.Save();
-            Debug.Log("New High Score Saved!");
+            isNewRecord = true;
         }
 
         DisplayHighScore();
+        return isNewRecord;
+    }
+
+    public int GetCurrentScore()
+    { 
+        return currentScore; 
     }
 }
 

@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] float timeRemaining = 181f;
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] GameObject gameOverPanel;
+    [SerializeField] TextMeshProUGUI finalScoreText;
+    [SerializeField] TextMeshProUGUI finalScoreHeading;
 
     bool isGameActive = false;
 
@@ -50,9 +52,21 @@ public class UIManager : MonoBehaviour
     private void EndGame()
     {
         isGameActive = false;
+        bool isNewRecord = ScoreManager.Instance.RegisterFinalScore();
 
         if (ScoreManager.Instance != null)
             ScoreManager.Instance.RegisterFinalScore();
+
+        if (finalScoreText != null)
+            finalScoreText.text = ScoreManager.Instance.GetCurrentScore().ToString();
+
+        if (finalScoreHeading != null)
+        {
+            if(isNewRecord)
+                finalScoreHeading.text = "New High Score!";
+            else
+                finalScoreHeading.text = "Final Score";
+        }
 
         Time.timeScale = 0f;
         
@@ -66,7 +80,7 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void QuitToMenu()
+    public void QuitGame()
     {
         Time.timeScale = 1f;
         Application.Quit();
