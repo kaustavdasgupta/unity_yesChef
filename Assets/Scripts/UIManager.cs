@@ -5,16 +5,29 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] float timeRemaining = 181f;
+    [SerializeField] float timeRemaining = 180f;
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] TextMeshProUGUI finalScoreText;
     [SerializeField] TextMeshProUGUI finalScoreHeading;
+    [SerializeField] GameObject pauseMenuPanel;
+    [SerializeField] GameObject startScreenPanel;
 
     bool isGameActive = false;
+    bool isPaused = false;
 
-    private void Start()
+    private void Awake()
     {
+        Time.timeScale = 0f;
+        startScreenPanel.SetActive(true);
+        isGameActive = false;
+    }
+
+    private void InitGame()
+    {
+        startScreenPanel.SetActive(false);
+        Time.timeScale = 1f;
+
         isGameActive = true;
         
         if (gameOverPanel != null) 
@@ -38,6 +51,14 @@ public class UIManager : MonoBehaviour
             timeRemaining = 0;
             UpdateTimerDisplay(0);
             EndGame();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused) 
+                Resume();
+            else 
+                Pause();
         }
     }
 
@@ -72,6 +93,25 @@ public class UIManager : MonoBehaviour
         
         if (gameOverPanel != null) 
             gameOverPanel.SetActive(true);
+    }
+
+    public void StartGame()
+    {
+        InitGame();
+    }
+
+    public void Pause()
+    {
+        isPaused = true;
+        pauseMenuPanel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void Resume()
+    {
+        isPaused = false;
+        pauseMenuPanel.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void RestartGame()
