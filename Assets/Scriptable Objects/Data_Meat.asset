@@ -15,7 +15,7 @@ MonoBehaviour:
   ingredientName: Meat
   type: 2
   scoreValue: 30
-  displayColor: {r: 1, g: 1, b: 1, a: 1}
-  prefab: {fileID: 0}
+  defaultPrefab: {fileID: 3275215932918795244, guid: ae8ded09fe586d64db995eb6312c0d69, type: 3}
+  processedPrefab: {fileID: 1095439949980823842, guid: 9d8ce17182866ab409e9e69783cb40c0, type: 3}
   needsChopping: 0
   needsCooking: 1

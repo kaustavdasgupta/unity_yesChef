@@ -15,7 +15,7 @@ MonoBehaviour:
   ingredientName: Vegetable
   type: 1
   scoreValue: 20
-  displayColor: {r: 1, g: 1, b: 1, a: 1}
-  prefab: {fileID: 0}
+  defaultPrefab: {fileID: 7937145067915638684, guid: 897fc0a4eaec0cd4d9fd52ed4e238ac8, type: 3}
+  processedPrefab: {fileID: 3788324797560304963, guid: 248d5f4f848e76e46a4984045a12d0bd, type: 3}
   needsChopping: 1
   needsCooking: 0

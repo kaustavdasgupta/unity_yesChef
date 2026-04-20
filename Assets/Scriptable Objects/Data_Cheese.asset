@@ -15,7 +15,7 @@ MonoBehaviour:
   ingredientName: Cheese
   type: 0
   scoreValue: 10
-  displayColor: {r: 1, g: 1, b: 1, a: 1}
-  prefab: {fileID: 0}
+  defaultPrefab: {fileID: 6225511934322537212, guid: 706a9968dd6c44f469910c18a1d7a801, type: 3}
+  processedPrefab: {fileID: 6225511934322537212, guid: 706a9968dd6c44f469910c18a1d7a801, type: 3}
   needsChopping: 0
   needsCooking: 0

@@ -15,12 +15,20 @@ public class IngredientSO : ScriptableObject
     public int scoreValue;
 
     [Header("Visuals")]
-    public Color displayColor = Color.white;
-    public GameObject prefab;
+    public GameObject defaultPrefab;  
+    public GameObject processedPrefab;
 
     [Header("Processing Requirements")]
     public bool needsChopping;
     public bool needsCooking;
+
+    public GameObject GetModel(bool isProcessed)
+    {
+        if (isProcessed && processedPrefab != null)
+            return processedPrefab;
+
+        return defaultPrefab;
+    }
 }
 
 
